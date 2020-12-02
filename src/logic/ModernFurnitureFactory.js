@@ -1,21 +1,14 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModernFurnitureFactory = void 0;
-var Chair_1 = require("../furniture/Chair");
-var Table_1 = require("../furniture/Table");
-var Sofa_1 = require("../furniture/Sofa");
-var ModernFurnitureFactory = /** @class */ (function () {
-    function ModernFurnitureFactory() {
+import { ModernChair } from "../furniture/Chair";
+import { ModernTable } from "../furniture/Table";
+import { ModernSofa } from "../furniture/Sofa";
+export class ModernFurnitureFactory {
+    createChair() {
+        return new ModernChair();
     }
-    ModernFurnitureFactory.prototype.createChair = function () {
-        return new Chair_1.ModernChair();
-    };
-    ModernFurnitureFactory.prototype.createTable = function () {
-        return new Table_1.ModernTable();
-    };
-    ModernFurnitureFactory.prototype.createSofa = function () {
-        return new Sofa_1.ModernSofa();
-    };
-    return ModernFurnitureFactory;
-}());
-exports.ModernFurnitureFactory = ModernFurnitureFactory;
+    createTable() {
+        return new ModernTable();
+    }
+    createSofa() {
+        return new ModernSofa();
+    }
+}

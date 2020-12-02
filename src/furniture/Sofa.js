@@ -1,23 +1,30 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.GothicSofa = exports.ModernSofa = void 0;
-var ModernSofa = /** @class */ (function () {
-    function ModernSofa() {
+export class ModernSofa {
+    constructor(material = 'cotton and linen', color = 'gray') {
+        this.material = 'no material';
+        this.color = 'no color';
+        this.softSeats = true;
+        this.chooseMaterial(material);
+        this.design(color);
     }
-    ModernSofa.prototype.chooseMaterial = function () {
-    };
-    ModernSofa.prototype.design = function () {
-    };
-    return ModernSofa;
-}());
-exports.ModernSofa = ModernSofa;
-var GothicSofa = /** @class */ (function () {
-    function GothicSofa() {
+    chooseMaterial(material) {
+        this.material = material;
     }
-    GothicSofa.prototype.chooseMaterial = function () {
-    };
-    GothicSofa.prototype.design = function () {
-    };
-    return GothicSofa;
-}());
-exports.GothicSofa = GothicSofa;
+    design(color) {
+        this.color = color;
+    }
+}
+export class GothicSofa {
+    constructor(material = 'velvet', color = 'dark blue') {
+        this.material = 'no material';
+        this.color = 'no color';
+        this.hardSeats = true;
+        this.chooseMaterial(material);
+        this.design(color);
+    }
+    chooseMaterial(material) {
+        this.material = material;
+    }
+    design(color) {
+        this.color = color;
+    }
+}

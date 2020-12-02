@@ -1,23 +1,30 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.ModernChair = exports.GothicChair = void 0;
-var GothicChair = /** @class */ (function () {
-    function GothicChair() {
+export class GothicChair {
+    constructor(color = 'black') {
+        this.peacesState = 'not connected';
+        this.color = 'no color';
+        this.metalChairLeg = true;
+        this.connectAllPeases();
+        this.paintTheChair(color);
     }
-    GothicChair.prototype.connectAllPeases = function () {
-    };
-    GothicChair.prototype.paintTheChair = function () {
-    };
-    return GothicChair;
-}());
-exports.GothicChair = GothicChair;
-var ModernChair = /** @class */ (function () {
-    function ModernChair() {
+    connectAllPeases() {
+        this.peacesState = 'connected';
     }
-    ModernChair.prototype.connectAllPeases = function () {
-    };
-    ModernChair.prototype.paintTheChair = function () {
-    };
-    return ModernChair;
-}());
-exports.ModernChair = ModernChair;
+    paintTheChair(color) {
+        this.color = color;
+    }
+}
+export class ModernChair {
+    constructor(color = 'white') {
+        this.color = color;
+        this.peacesState = 'not connected';
+        this.comfortableChairBack = true;
+        this.connectAllPeases();
+        this.paintTheChair(color);
+    }
+    connectAllPeases() {
+        this.peacesState = 'connected';
+    }
+    paintTheChair(color) {
+        this.color = color;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "furniture-factory",
+  "version": "1.0.0",
+  "description": "Users can choose the amount and style of wanted furniture.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kolpakovin/furniture-factory.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kolpakovin/furniture-factory/issues"
+  },
+  "homepage": "https://github.com/kolpakovin/furniture-factory#readme",
+  "dependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}
