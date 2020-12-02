@@ -3,28 +3,26 @@ import { GothicFurnitureFactory } from '../logic/GothicFurnitureFactory';
 import { ModernFurnitureFactory } from '../logic/ModernFurnitureFactory';
 export class Dom {
     constructor() {
-        this.modernChairInput = document.getElementById('modernChairInput');
-        this.modernTableInput = document.getElementById('modernTableInput');
-        this.modernSofaInput = document.getElementById('modernSofaInput');
-        this.gothicChairInput = document.getElementById('gothicChairInput');
-        this.gothicTableInput = document.getElementById('gothicTableInput');
-        this.gothicSofaInput = document.getElementById('gothicSofaInput');
+        this.inputsIds = [
+            'modernChairInput', 'modernTableInput', 'modernSofaInput',
+            'gothicChairInput', 'gothicTableInput', 'gothicSofaInput'
+        ];
         this.submitButton = document.getElementById('submit');
+        this.elements = {};
         this.modernFurnitureFactory = new ModernFurnitureFactory();
         this.gothicFurnitureFactory = new GothicFurnitureFactory();
         this.room = new Room();
-        this.inputs = [
-            this.modernChairInput, this.modernTableInput, this.modernSofaInput,
-            this.gothicChairInput, this.gothicTableInput, this.gothicSofaInput
-        ];
         this.furnitureAmount = {};
         this.onSubmit = () => {
-            this.inputs.forEach((input) => {
+            Object.values(this.elements).forEach((input) => {
                 this.furnitureAmount[input.name] = parseInt(input.value);
             });
             this.addFurnitureToRoom();
         };
-        this.addEventListener('change', this.inputs);
+        this.inputsIds.forEach(inputId => {
+            this.elements[inputId] = document.getElementById(inputId);
+        });
+        this.addEventListener('change', Object.values(this.elements));
         this.addEventListener('onclick', this.submitButton);
     }
     addEventListener(eventName, el) {

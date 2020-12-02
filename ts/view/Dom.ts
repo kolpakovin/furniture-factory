@@ -7,29 +7,26 @@ import { GothicFurnitureFactory } from '../logic/GothicFurnitureFactory';
 import { ModernFurnitureFactory } from '../logic/ModernFurnitureFactory'
 
 export class Dom {
-    modernChairInput = document.getElementById('modernChairInput') as HTMLInputElement;
-    modernTableInput = document.getElementById('modernTableInput') as HTMLInputElement;
-    modernSofaInput = document.getElementById('modernSofaInput') as HTMLInputElement;
-    
-    gothicChairInput = document.getElementById('gothicChairInput') as HTMLInputElement;
-    gothicTableInput = document.getElementById('gothicTableInput') as HTMLInputElement;
-    gothicSofaInput = document.getElementById('gothicSofaInput') as HTMLInputElement;
-    
+    inputsIds: string[] = [
+        'modernChairInput', 'modernTableInput', 'modernSofaInput',
+        'gothicChairInput', 'gothicTableInput', 'gothicSofaInput'
+    ]
     submitButton = document.getElementById('submit') as HTMLButtonElement;
+
+    elements: { [key: string]: HTMLInputElement } = {}
+    
     
     modernFurnitureFactory = new ModernFurnitureFactory();
     gothicFurnitureFactory = new GothicFurnitureFactory();
     
     room = new Room();
-
-    inputs: HTMLInputElement[] = [
-        this.modernChairInput, this.modernTableInput, this.modernSofaInput,
-        this.gothicChairInput, this.gothicTableInput, this.gothicSofaInput];
-    
     furnitureAmount: { [key:string]: number } = {}; 
 
     constructor() {
-        this.addEventListener('change', this.inputs);
+        this.inputsIds.forEach(inputId => {
+            this.elements[inputId] = document.getElementById(inputId) as HTMLInputElement;
+        })
+        this.addEventListener('change', Object.values(this.elements));
         this.addEventListener('onclick', this.submitButton);
     }
 
@@ -51,7 +48,7 @@ export class Dom {
     }
 
     onSubmit = (): void => {
-        this.inputs.forEach((input) => {
+        Object.values(this.elements).forEach((input) => {
             this.furnitureAmount[input.name] = parseInt(input.value);
         });
         this.addFurnitureToRoom();

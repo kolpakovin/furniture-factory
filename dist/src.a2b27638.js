@@ -528,28 +528,26 @@ var Dom = /*#__PURE__*/function () {
 
     _classCallCheck(this, Dom);
 
-    this.modernChairInput = document.getElementById('modernChairInput');
-    this.modernTableInput = document.getElementById('modernTableInput');
-    this.modernSofaInput = document.getElementById('modernSofaInput');
-    this.gothicChairInput = document.getElementById('gothicChairInput');
-    this.gothicTableInput = document.getElementById('gothicTableInput');
-    this.gothicSofaInput = document.getElementById('gothicSofaInput');
+    this.inputsIds = ['modernChairInput', 'modernTableInput', 'modernSofaInput', 'gothicChairInput', 'gothicTableInput', 'gothicSofaInput'];
     this.submitButton = document.getElementById('submit');
+    this.elements = {};
     this.modernFurnitureFactory = new _ModernFurnitureFactory.ModernFurnitureFactory();
     this.gothicFurnitureFactory = new _GothicFurnitureFactory.GothicFurnitureFactory();
     this.room = new _Room.Room();
-    this.inputs = [this.modernChairInput, this.modernTableInput, this.modernSofaInput, this.gothicChairInput, this.gothicTableInput, this.gothicSofaInput];
     this.furnitureAmount = {};
 
     this.onSubmit = function () {
-      _this.inputs.forEach(function (input) {
+      Object.values(_this.elements).forEach(function (input) {
         _this.furnitureAmount[input.name] = parseInt(input.value);
       });
 
       _this.addFurnitureToRoom();
     };
 
-    this.addEventListener('change', this.inputs);
+    this.inputsIds.forEach(function (inputId) {
+      _this.elements[inputId] = document.getElementById(inputId);
+    });
+    this.addEventListener('change', Object.values(this.elements));
     this.addEventListener('onclick', this.submitButton);
   }
 
@@ -684,7 +682,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50590" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49324" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
