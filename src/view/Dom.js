@@ -66,11 +66,9 @@ export class Dom {
                         furniture = this.gothicFurnitureFactory.createTable();
                         break;
                     default:
-                        console.log(key);
                         throw new Error('Invalid furniture');
                 }
                 this.room.addFurnitureToTheRoom(furniture);
-                console.log(this.room.furniture);
                 this.visualiseRoom();
             }
         }

@@ -15,8 +15,8 @@ export class GothicChair {
 }
 export class ModernChair {
     constructor(color = 'white') {
-        this.color = color;
         this.peacesState = 'not connected';
+        this.color = 'no color';
         this.comfortableChairBack = true;
         this.connectAllPeases();
         this.paintTheChair(color);

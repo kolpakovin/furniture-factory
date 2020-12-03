@@ -19,6 +19,7 @@ export class ModernTable implements Table {
     chooseMaterial(material: string): void {
         this.material = material;
     }
+    
     createForm(form: string): void {
         this.form = form;
     }
@@ -37,6 +38,7 @@ export class GothicTable implements Table {
     chooseMaterial(material: string): void {
         this.material = material;
     }
+
     createForm(form: string): void {
         this.form = form;
     }

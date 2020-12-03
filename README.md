@@ -2,4 +2,6 @@
 
 Users can choose the amount and style of wanted furniture.
 
-I'm going to implement this task with a few design patterns: Abstract Factory and Factory Method.
+After submitting we going to see pictures of the chosen furniture on screen.
+
+The code was implemented with a factory design pattern.

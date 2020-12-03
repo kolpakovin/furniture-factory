@@ -237,8 +237,8 @@ var ModernChair = /*#__PURE__*/function () {
 
     _classCallCheck(this, ModernChair);
 
-    this.color = color;
     this.peacesState = 'not connected';
+    this.color = 'no color';
     this.comfortableChairBack = true;
     this.connectAllPeases();
     this.paintTheChair(color);
@@ -607,12 +607,10 @@ var Dom = /*#__PURE__*/function () {
               break;
 
             default:
-              console.log(key);
               throw new Error('Invalid furniture');
           }
 
           this.room.addFurnitureToTheRoom(furniture);
-          console.log(this.room.furniture);
           this.visualiseRoom();
         }
       }

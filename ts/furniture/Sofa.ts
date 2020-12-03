@@ -10,7 +10,6 @@ export class ModernSofa implements Sofa {
     color: string = 'no color';
     softSeats = true;
 
-
     constructor(
         material: string = 'cotton and linen',
         color: string = 'gray'

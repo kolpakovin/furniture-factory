@@ -26,15 +26,18 @@ export class GothicChair implements Chair {
 
 export class ModernChair implements Chair {
     peacesState: string = 'not connected';
+    color: string = 'no color'; 
     comfortableChairBack = true;
 
-    constructor(public color: string = 'white') {
+    constructor(color: string = 'white') {
         this.connectAllPeases();
         this.paintTheChair(color);
     }
+    
     connectAllPeases(): void {
         this.peacesState = 'connected';
     }
+
     paintTheChair(color: string) :void {
         this.color = color;
     }

@@ -1,8 +1,5 @@
 import { Room } from '../logic/Room';
-import { ModernChair, GothicChair } from '../furniture/Chair';
 import { AvailableFurniture } from '../logic/FurnitureFactory';
-import { ModernSofa, GothicSofa } from '../furniture/Sofa';
-import { ModernTable, GothicTable } from '../furniture/Table';
 import { GothicFurnitureFactory } from '../logic/GothicFurnitureFactory';
 import { ModernFurnitureFactory } from '../logic/ModernFurnitureFactory'
 
@@ -79,12 +76,10 @@ export class Dom {
                         furniture = this.gothicFurnitureFactory.createTable();
                         break;
                     default:
-                        console.log(key)
                         throw new Error('Invalid furniture');
                     
                 }
                 this.room.addFurnitureToTheRoom(furniture);
-                console.log(this.room.furniture)
                 this.visualiseRoom()
             }   
         }
