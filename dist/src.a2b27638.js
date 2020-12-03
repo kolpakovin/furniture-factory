@@ -637,21 +637,7 @@ exports.Dom = Dom;
 
 var _Dom = require("./view/Dom");
 
-new _Dom.Dom(); // const root = document.getElementById('root') as HTMLDivElement;
-// const firstInput = document.getElementById('modernChairInput') as HTMLInputElement;
-// firstInput.addEventListener('change', (e: Event): void => {
-//     changeHTML(e.currentTarget as HTMLInputElement);
-// })
-// let val: HTMLSpanElement;
-// if (firstInput.value) {
-//     val = document.getElementById('modernChairValue') as HTMLSpanElement;
-//     val.innerHTML = firstInput.value;
-// }
-// function changeHTML(el: HTMLInputElement) {
-//     if(el.value) {
-//         val.innerHTML = el.value;
-//     }
-// }
+new _Dom.Dom();
 },{"./view/Dom":"src/view/Dom.js"}],"../../.npm-global/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
